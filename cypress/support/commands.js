@@ -24,3 +24,13 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 import "cypress-localstorage-commands"
+
+Cypress.Commands.add('login', () => { 
+    cy.request('POST',
+      '/login',
+        { username: Cypress.env("userName"),
+        password: Cypress.env("password") }).then(
+        (response) => {
+        expect(response.status).to.eq(200)
+      })
+ })
