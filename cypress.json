@@ -1,9 +1,9 @@
 {
+    "baseUrl": "https://hometest-qa-develop.platformserviceaccount.com",
     "env": 
     {
-        "baseUrl": "https://devapi.currencycloud.com",
-        "userName": "giannirhino@yahoo.co.uk",
-        "apiKey": "c5276411ce6a3e07a41212da8ec3ed8721d9d52cd5b141ce0dd404f166da6e84"
+        "userName": "alice",
+        "password": "a37d3106168770fa4477903703c548c7010ea570"
 
     }
 }

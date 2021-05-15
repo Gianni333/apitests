@@ -1,11 +1,13 @@
 {
   "devDependencies": {
-    "cypress": "^7.2.0"
+    "cypress": "^7.2.0",
+    "cypress-localstorage-commands": "^1.4.4"
   },
   "scripts": {
     "cypress:open": "cypress open"
   },
   "dependencies": {
-    "chai": "^4.3.4"
+    "chai": "^4.3.4",
+    "faker": "^5.5.3"
   }
 }
