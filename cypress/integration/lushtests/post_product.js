@@ -1,11 +1,18 @@
+var faker = require('faker');
+var randomProductName = faker.commerce.productName();
+var randomNumber = faker.random.number(50);
+
+
 describe("Get products", () => {
     before(() => {
         cy.login()
       })
 
-    it("Get list of products successfully", () => {
-      cy.request('GET',
-      '/products').then(
+    it("Create a product", () => {
+      cy.request('POST',
+      '/products',
+      { name: randomProductName,
+        available: randomNumber}).then(
         (response) => {
         expect(response.status).to.eq(200),
         expect(response.body).to.have.property('status', 'ok'),
