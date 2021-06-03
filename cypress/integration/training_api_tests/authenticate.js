@@ -8,7 +8,8 @@ describe('authenticate', () => {
           { login_id: Cypress.env("login_id"),
           api_key: Cypress.env("api_key") }).then(
           (response) => {
-          expect(response.status).to.eq(200)
+          expect(response.status).to.eq(200),
+          cy.setLocalStorage("auth_token", response.body.auth_token)
         })
     });
     it("does not authenticate successfully", () => {

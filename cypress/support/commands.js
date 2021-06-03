@@ -34,3 +34,14 @@ Cypress.Commands.add('login', () => {
         expect(response.status).to.eq(200)
       })
  })
+
+ Cypress.Commands.add('authenticate', () => { 
+  cy.request('POST',
+        Cypress.env("ccBaseUrl") + '/v2/authenticate/api',
+          { login_id: Cypress.env("login_id"),
+          api_key: Cypress.env("api_key") }).then(
+          (response) => {
+          expect(response.status).to.eq(200),
+          cy.setLocalStorage("auth_token", response.body.auth_token)
+        })
+})
